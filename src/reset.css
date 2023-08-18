@@ -1,0 +1,79 @@
+/*
+    Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/*
+    Remove default margin
+*/
+* {
+    margin: 0;
+}
+
+/*
+    Allow percentage-based heights in the application
+*/
+html, body {
+    height: 100%;
+}
+
+/*
+    Typographic tweaks!
+    - Add accessible line-height
+    - Improve text rendering
+*/
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+/*
+    Alternative typographic tweaks!
+    Instead of calculating the line height by multiplying the font-size with a number like 1.5, this alternative uses the font-size as a base, and adds a fixed amount of space to each line.
+    For body text like paragraphs, this declaration has no effect; either way, each line will resolve to 24px (assuming a default browser font size).
+    On larger text, though, this declaration produces tighter lines.
+    See https://kittygiraudel.com/2020/05/18/using-calc-to-figure-out-optimal-line-height/
+*/
+/** {
+    line-height: calc(1em + 0.5rem);
+}*/
+
+/*
+    Improve media defaults
+*/
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+}
+
+/*
+    Remove built-in form typography styles
+*/
+input, button, textarea, select {
+    font: inherit;
+}
+
+/*
+    Avoid text overflows
+*/
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+}
+
+/*
+    Avoid text overflows: Alternative for paragraphs which uses hyphens (in languages that support them) to indicate hard wraps. It also makes hard wraps much more common.
+*/
+/*p {
+    overflow-wrap: break-word;
+    hyphens: auto;
+}*/
+
+/*
+    Create a root stacking context
+*/
+/* ,#root, #__next */
+#main/* ,#root, #__next */ {
+    isolation: isolate;
+}
